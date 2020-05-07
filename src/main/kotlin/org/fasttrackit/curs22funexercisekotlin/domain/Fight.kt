@@ -46,6 +46,6 @@ class FightReader() {
         } catch (exception: IOException) {
             System.err.println(exception.message)
         }
-        return result
+        return result.toList()
     }
 }
