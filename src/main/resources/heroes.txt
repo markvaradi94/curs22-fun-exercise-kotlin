@@ -1,0 +1,10 @@
+Vadim|5000|4600
+Batman|3700|3500
+Vasile|1200|700
+Superman|4400|3900
+Goku|9000|7500
+Iliescu|4900|8000
+Yoda|6300|5000
+Aquaman|500|1000
+Vegeta|7500|5900
+PacMan|1300|1100
