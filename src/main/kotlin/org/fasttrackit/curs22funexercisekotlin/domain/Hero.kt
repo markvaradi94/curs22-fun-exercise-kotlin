@@ -34,8 +34,8 @@ class HeroReader() {
 
     fun read(): List<Hero> {
         val result = mutableListOf<Hero>()
-        try {
-            val inputStream: InputStream = file.inputStream
+        val inputStream = file.inputStream
+        inputStream.use {
             val scanner = Scanner(inputStream)
             scanner.useDelimiter("[|]")
             while (scanner.hasNextLine()) {
@@ -46,10 +46,7 @@ class HeroReader() {
                         tokens[2].toInt()
                 ))
             }
-            inputStream.close()
-        } catch (exception: IOException) {
-            System.err.println(exception.message)
         }
-        return result.toList()
+        return result
     }
 }

@@ -32,8 +32,8 @@ class FightReader() {
 
     fun read(): List<Fight> {
         val result = mutableListOf<Fight>()
-        try {
-            val inputStream = file.inputStream
+        val inputStream = file.inputStream
+        inputStream.use {
             val scanner = Scanner(inputStream)
             scanner.useDelimiter("[|]")
             while (scanner.hasNextLine()) {
@@ -42,10 +42,7 @@ class FightReader() {
                         tokens[0].toInt(),
                         tokens[1].toInt()))
             }
-            inputStream.close()
-        } catch (exception: IOException) {
-            System.err.println(exception.message)
         }
-        return result.toList()
+        return result
     }
 }

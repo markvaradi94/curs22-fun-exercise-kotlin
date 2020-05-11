@@ -39,6 +39,8 @@ class HeroService {
 
     fun getHeroById(id: Int) = getOrThrow(id)
 
+    fun addWinToHero(hero: Hero) = hero.addWin()
+
     private fun fetchLatestId(): Int {
         val existingIds = heroes.map { it.id }.toSet()
         val allInts = (1..Int.MAX_VALUE).asSequence()
